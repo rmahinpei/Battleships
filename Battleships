@@ -1,3 +1,8 @@
+/*
+    Battleships is an interactive Java program that allows the user to play a game of Battleships against the computer.
+    The program first asks user to deploy his/her ships and then asks for coordinations at which user wants to fire.
+    The game continues until either the computer or the user wins. 
+*/
 import java.util.Scanner;
 public class battleShips {
     public static void main(String[] args) {

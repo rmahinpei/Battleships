@@ -1,10 +1,16 @@
+/*
+    TripPlanner is an interactive Java program that asks users for their current location, travel destination, and travel budget
+    and calculates the user's daily budget (in both USD and the location's currency) and the total distance to the destination.
+*/
 import java.util.Scanner;
+
 public class tripPlanner {
     public static void main(String[] args) {
         greeting();
         details();
         distance();
     }
+    // ask for user's name and travel destination
     public static void greeting() {
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Vacation Planner!");
@@ -13,8 +19,8 @@ public class tripPlanner {
         System.out.print("Nice to meet you " + name + ", where are you travelling to? ");
         String location = input.nextLine();
         System.out.println("Great! " + location + " sounds like an amazing place!");
-        System.out.println();
     }
+    // ask user for number of vacation days, travel budget, and currency of destination
     public static void details() {
         Scanner input = new Scanner(System.in);
         System.out.print("How many days are you going to spend travelling? ");
@@ -26,19 +32,20 @@ public class tripPlanner {
         System.out.print("How many " + symbol + " are there in 1 USD? ");
         double conversion = input.nextDouble();
 
+        // convert travel budget to destination's currency and calculate daily budget
         double converted1 = money / days;
         int converted2 = (int)(converted1 * 100);
         double converted3 = (double)(converted2 / 100);
-
         double budget1 = conversion * money;
         int budget2 = (int)(budget1 * 100);
         double budget3 = (double)(budget2 / 100);
-
+        
+        // display daily budget both in USD and destination's currency
         System.out.println("If you are travelling for " + days + " days that is the same as " + (days * 24) + " hours.");
         System.out.println("You can spend up to $" + converted3 + " USD.");
         System.out.println("Your budget in " + symbol + " is " + budget3);
-        System.out.println();
     }
+    // ask user for info on their current location and desired destination in order to calculate total distance
     public static void distance() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the latitude of your home city: ");
@@ -55,6 +62,5 @@ public class tripPlanner {
         int answer2 = (int)(answer1 * 100);
         double answer3 = answer2 / 100.0;
         System.out.println("The distance from your home to your destination is " + answer3 + " km.");
-        System.out.println();
     }
 }

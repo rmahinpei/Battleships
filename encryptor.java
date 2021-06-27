@@ -1,3 +1,7 @@
+/*
+    Encrypts a message inputted by the user by shifting the alphabet order by one
+*/
+
 import java.util.Scanner;
 public class encryptor {
     public static String normalizeText(String input) {

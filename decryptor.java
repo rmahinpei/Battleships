@@ -1,3 +1,7 @@
+/*
+    Decrypts the message encrypted by encryptor.java
+*/
+
 import java.util.Scanner;
 public class decryptor {
     public static String ungroupify(String input) {
